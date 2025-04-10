@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'wouter';
 import { IconMenu, IconX } from '@tabler/icons-react';
+import InputSearch from './SearchInput';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,21 +44,13 @@ export default function Header() {
                         </Link>
                     </li>
                     <li className="block md:hidden">
-                        <input
-                            className="bg-white text-black p-1 rounded-sm w-full"
-                            type="text"
-                            placeholder="Search..."
-                        />
+                        <InputSearch />
                     </li>
                 </ul>
             </nav>
 
             <div className="hidden md:block">
-                <input
-                    className="bg-white text-black p-1 rounded-sm"
-                    type="text"
-                    placeholder="Search..."
-                />
+                <InputSearch />
             </div>
         </header>
     );
