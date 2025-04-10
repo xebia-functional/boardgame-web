@@ -24,7 +24,7 @@ export default function Header() {
                 className={`
                 ${isMenuOpen ? 'block' : 'hidden'}
                 absolute top-full left-0 w-full bg-primary p-4
-                md:static md:block md:w-auto md:p-0
+                md:static md:block md:w-auto md:p-0 z-2
             `}
             >
                 <ul className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
