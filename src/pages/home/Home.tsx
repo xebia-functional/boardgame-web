@@ -1,5 +1,5 @@
 import boardGames from '/boardGames.jpg';
-import '@justinribeiro/lite-youtube';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 
 const Home = () => {
     return (
@@ -59,24 +59,27 @@ const Home = () => {
 
                 <div className="flex flex-wrap justify-center gap-8">
                     <div className="w-full sm:w-1/4 md:w-1/4 lg:w-1/4">
-                        <lite-youtube
-                            videoid="oiQ6SgBzfqY"
-                            placeholder="https://img.youtube.com/vi/oiQ6SgBzfqY/0.jpg"
-                        ></lite-youtube>
+                        <LiteYouTubeEmbed
+                            id="oiQ6SgBzfqY"
+                            poster="hqdefault"
+                            title="Trailer del juego 1"
+                        ></LiteYouTubeEmbed>
                     </div>
 
                     <div className="w-full sm:w-1/4 md:w-1/4 lg:w-1/4">
-                        <lite-youtube
-                            videoid="p4fB42w15Tw"
-                            placeholder="https://img.youtube.com/vi/p4fB42w15Tw/0.jpg"
-                        ></lite-youtube>
+                        <LiteYouTubeEmbed
+                            id="p4fB42w15Tw"
+                            poster="hqdefault"
+                            title="Trailer del juego 2"
+                        ></LiteYouTubeEmbed>
                     </div>
 
                     <div className="w-full sm:w-1/4 md:w-1/4 lg:w-1/4">
-                        <lite-youtube
-                            videoid="ojkScPkdgsk"
-                            placeholder="https://img.youtube.com/vi/ojkScPkdgsk/0.jpg"
-                        ></lite-youtube>
+                        <LiteYouTubeEmbed
+                            id="ojkScPkdgsk"
+                            poster="hqdefault"
+                            title="Trailer del juego 3"
+                        ></LiteYouTubeEmbed>
                     </div>
                 </div>
             </section>
