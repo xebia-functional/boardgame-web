@@ -9,17 +9,17 @@ export default function Header() {
             <nav>
                 <ul className="flex space-x-4">
                     <li>
-                        <Link href="/" className="text-white hover:text-gray-300">
+                        <Link href="/players" className="text-white hover:text-gray-300">
                             Players
                         </Link>
                     </li>
                     <li>
-                        <Link href="/" className="text-white hover:text-gray-300">
+                        <Link href="/plays" className="text-white hover:text-gray-300">
                             Plays
                         </Link>
                     </li>
                     <li>
-                        <Link href="/" className="text-white hover:text-gray-300">
+                        <Link href="/games" className="text-white hover:text-gray-300">
                             Games
                         </Link>
                     </li>
