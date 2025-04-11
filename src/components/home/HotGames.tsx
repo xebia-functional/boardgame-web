@@ -2,7 +2,7 @@ import { useState } from 'react';
 import HotGame from './HotGame';
 
 export default function HotGames() {
-    const [games, setGames] = useState<Game[]>([
+    const [games, setGames] = useState<HotGame[]>([
         {
             name: 'Juego 1',
             description:
