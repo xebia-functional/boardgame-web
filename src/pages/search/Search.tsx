@@ -2,28 +2,21 @@ import { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'wouter';
 
 export default function Search() {
-    const [results, setResults] = useState<GameBGG[]>([
-        {
-            id: 1,
-            name: 'Game 1',
-            yearPublished: 2022
-        },
-        {
-            id: 2,
-            name: 'Game 2',
-            yearPublished: 2023
-        },
-        {
-            id: 3,
-            name: 'Game 3',
-            yearPublished: 2024
-        }
-    ]);
+    const [results, setResults] = useState<GameBGG[]>([]);
     const [searchParams] = useSearchParams();
     const query = searchParams.get('query');
 
+    const getSearchResults = async (query: string) => {
+        const response = await fetch(`http://localhost:8081/search?query=${query}`);
+        const data = await response.json();
+
+        setResults(data.items);
+    };
+
     useEffect(() => {
-        // Call to the API to fetch the search results
+        if (query) {
+            getSearchResults(query);
+        }
     }, [query]);
 
     return (
@@ -34,14 +27,16 @@ export default function Search() {
                 </h2>
                 <div className="flex flex-col justify-center gap-3 w-full mt-4">
                     {results.length > 0 ? (
-                        results.map(game => (
+                        results.map((game, index) => (
                             <div
-                                key={game.id}
+                                key={index}
                                 className="flex justify-between items-center bg-white p-4 rounded-md shadow-md"
                             >
                                 <h3 className="text-xl font-semibold">
-                                    {game.name}{' '}
-                                    <span className="font-normal">({game.yearPublished})</span>
+                                    {game.name.value}{' '}
+                                    <span className="font-normal">
+                                        ({game.yearpublished?.value ?? 'No year'})
+                                    </span>
                                 </h3>
                                 <Link
                                     href={'/games/' + game.id}
