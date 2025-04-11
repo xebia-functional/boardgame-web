@@ -10,7 +10,7 @@ export default function Search() {
         const response = await fetch(`http://localhost:8081/search?query=${query}`);
         const data = await response.json();
 
-        setResults(data.items);
+        setResults(data?.items ? data.items : []);
     };
 
     useEffect(() => {
