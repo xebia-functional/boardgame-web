@@ -20,9 +20,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.1.0(react@19.1.0)
-      react-lite-youtube-embed:
-        specifier: ^2.4.0
-        version: 2.4.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react-lite-yt-embed:
+        specifier: ^1.2.7
+        version: 1.2.7(react@19.1.0)
       tailwindcss:
         specifier: ^4.1.3
         version: 4.1.3
@@ -1033,11 +1033,11 @@ packages:
     peerDependencies:
       react: ^19.1.0
 
-  react-lite-youtube-embed@2.4.0:
-    resolution: {integrity: sha512-Xo6cM1zPlROvvM97JkqQIoXstlQDaC4+DawmM7BB7Hh1cXrkBHEGq1iJlQxBTUWAUklmpcC7ph7qg7CztXtABQ==}
+  react-lite-yt-embed@1.2.7:
+    resolution: {integrity: sha512-c660Rp089OJnhIKHq6BzI/2XiExveJAYBVZBj0q26A1Pl2uqlXeLHW/WruGjszQdRHxiJquo2o7hVTvJ5OongA==}
+    engines: {node: '>=10'}
     peerDependencies:
-      react: '>=18.2.0'
-      react-dom: '>=18.2.0'
+      react: '>=16'
 
   react@19.1.0:
     resolution: {integrity: sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==}
@@ -2014,10 +2014,9 @@ snapshots:
       react: 19.1.0
       scheduler: 0.26.0
 
-  react-lite-youtube-embed@2.4.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  react-lite-yt-embed@1.2.7(react@19.1.0):
     dependencies:
       react: 19.1.0
-      react-dom: 19.1.0(react@19.1.0)
 
   react@19.1.0: {}
 
