@@ -7,6 +7,11 @@ type HotGame = {
 
 type GameBGG = {
     id: number;
-    name: string;
-    yearPublished: number;
+    name: {
+        type: string;
+        value: string;
+    };
+    yearpublished: {
+        value?: string;
+    };
 };
