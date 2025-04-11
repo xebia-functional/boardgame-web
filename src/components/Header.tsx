@@ -1,10 +1,17 @@
 import { useState } from 'react';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import { IconMenu, IconX } from '@tabler/icons-react';
 import InputSearch from './SearchInput';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [location] = useLocation();
+
+    const navLinks = [
+        { href: '/players', label: 'Players' },
+        { href: '/plays', label: 'Plays' },
+        { href: '/games', label: 'Games' }
+    ];
 
     return (
         <header className="flex items-center justify-between p-4 bg-primary text-white relative">
@@ -28,21 +35,16 @@ export default function Header() {
             `}
             >
                 <ul className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
-                    <li>
-                        <Link href="/players" className="text-white hover:text-gray-300">
-                            Players
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/plays" className="text-white hover:text-gray-300">
-                            Plays
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/games" className="text-white hover:text-gray-300">
-                            Games
-                        </Link>
-                    </li>
+                    {navLinks.map(({ href, label }) => (
+                        <li key={href}>
+                            <Link
+                                href={href}
+                                className={`text-white hover:text-gray-300 ${location === href ? 'font-bold' : ''}`}
+                            >
+                                {label}
+                            </Link>
+                        </li>
+                    ))}
                     <li className="block md:hidden">
                         <InputSearch />
                     </li>
