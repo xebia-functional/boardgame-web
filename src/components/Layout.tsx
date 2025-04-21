@@ -1,12 +1,11 @@
-import Footer from './commons/Footer';
-import Header from './commons/Header';
+import Header from './Header';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <>
             <Header />
             <main>{children}</main>
-            <Footer />
+            <footer>footer</footer>
         </>
     );
 }
