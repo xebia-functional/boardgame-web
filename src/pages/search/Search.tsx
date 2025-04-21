@@ -22,7 +22,7 @@ export default function Search() {
     }, [query]);
 
     return (
-        <div className="bg-white-secondary w-full h-screen">
+        <div className="bg-white-secondary w-full min-h-screen">
             <div className="flex flex-col justify-center gap-3 w-full mt-4 p-2">
                 <h2 className="bg-white w-full text-center p-4 rounded-md font-semibold shadow-md">
                     "{query}" results...
