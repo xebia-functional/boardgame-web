@@ -11,11 +11,11 @@
         "format": "prettier --write ."
     },
     "dependencies": {
-        "@justinribeiro/lite-youtube": "^1.7.1",
         "@tabler/icons-react": "^3.31.0",
         "@tailwindcss/vite": "^4.1.3",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
+        "react-lite-yt-embed": "^1.2.7",
         "tailwindcss": "^4.1.3",
         "wouter": "^3.6.0"
     },
