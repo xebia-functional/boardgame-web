@@ -1,6 +1,17 @@
 /// <reference types="vite/client" />
 
-type Game = {
+type HotGame = {
     name: string;
     description: string;
+};
+
+type GameBGG = {
+    id: number;
+    name: {
+        type: string;
+        value: string;
+    };
+    yearpublished: {
+        value?: string;
+    };
 };
