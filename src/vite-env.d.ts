@@ -7,11 +7,28 @@ type HotGame = {
 
 type GameBGG = {
     id: number;
-    name: {
-        type: string;
-        value: string;
-    };
-    yearpublished: {
-        value?: string;
-    };
+    name: { value: string };
+    yearpublished?: { value: number };
+};
+
+type PlayerDTO = {
+    id: number;
+    name: string;
+    nickname: string;
+};
+
+type Player = {
+    id: number;
+    name: string;
+    nickname: string;
+};
+
+type Game = {
+    id: number;
+    title: string;
+};
+
+type Message = {
+    text: string;
+    from: 'user' | 'ai';
 };
