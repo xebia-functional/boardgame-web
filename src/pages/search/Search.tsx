@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'wouter';
+import axios from 'axios';
 
 export default function Search() {
     const [loading, setLoading] = useState(true);
@@ -13,6 +14,18 @@ export default function Search() {
 
         setResults(data?.items ? data.items : []);
         setLoading(false);
+    };
+
+    const saveGames = async (game: any) => {
+        try {
+            const response = await axios.post(`http://localhost:8080/games/${game.id}`);
+            console.log('Juego guardado desde BGG:', response.data);
+            alert(`El juego "${game.name.value}" ha sido guardado correctamente.`);
+
+            localStorage.setItem('newGameAdded', Date.now().toString());
+        } catch (error) {
+            console.error('Error al guardar el juego desde BGG:', error);
+        }
     };
 
     useEffect(() => {
@@ -45,12 +58,20 @@ export default function Search() {
                                             ({game.yearpublished?.value ?? 'No year'})
                                         </span>
                                     </h3>
-                                    <Link
-                                        href={'/games/' + game.id}
-                                        className="bg-secondary text-primary font-bold px-3 py-1 rounded-md text-center cursor-pointer hover:scale-110 transition-transform"
-                                    >
-                                        Show
-                                    </Link>
+                                    <div className="flex gap-2">
+                                        <button
+                                            onClick={() => saveGames(game)}
+                                            className="bg-blue-500 text-white font-bold px-3 py-1 rounded-md text-center cursor-pointer hover:bg-blue-600 transition-colors"
+                                        >
+                                            Add
+                                        </button>
+                                        <Link
+                                            href={`/games/${game.id}`}
+                                            className="bg-gray-200 text-black font-bold px-3 py-1 rounded-md text-center cursor-pointer hover:bg-gray-300 transition-colors"
+                                        >
+                                            Show
+                                        </Link>
+                                    </div>
                                 </div>
                             ))
                         ) : (
