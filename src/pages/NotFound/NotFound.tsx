@@ -3,7 +3,7 @@ import error404 from '/error404.png';
 
 export default function NotFound() {
     return (
-        <div className="w-full p-20 flex items-center justify-center bg-white flex-col">
+        <div className="w-full min-h-screen flex items-center justify-center bg-white flex-col">
             <img
                 src={error404}
                 alt="Página no encontrada"
